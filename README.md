@@ -3,6 +3,8 @@ This is based on the nfc tag [Tagreader](https://github.com/adonno/tagreader)pro
 
 More Documentation can be found there as well.
 
+<img src="reader.jpg" width="500"/>
+
 My version focuses on the usage of this device as a alarm controller for a storefront. It sits behind a large window and does only the following:
 - Arm/Disarm alarm in Homeassistant (Using Alarmo) using NFC keychain tags
 - show the current alarm state using the LED
@@ -33,15 +35,16 @@ To build your own tag reader, you need the following components:
 
 ![Photo of schematics](Schematics/tag_reader_schematics_v4-nobuzzer.png)
 
+<img src="Schematics/tag_reader_schematics_v4-nobuzzer.png" width="500"/>
+
 Switches on PN532 need to be set to I2C mode:
 - Switch 1: On (up)
 - Switch 2: Off (down)
 
 To flash the reader firmware to your D1 Mini you point ESPHome at [tagreader.yaml](tagreader.yaml).  
-> :warning: The tag reader requires ESPHome `1.16.0`.
 
 ## Case
 made some changes to the original case design. Mainly did that to house the second LED and have some more space at the front for labels and logos.
-![Open Case](docs/inside-case.jpg)
+![Open Case](docs/inside_case.jpg)
 
 Step File from Fusion are [here](CAD Files)
