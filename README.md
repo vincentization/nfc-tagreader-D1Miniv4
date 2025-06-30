@@ -33,9 +33,7 @@ To build your own tag reader, you need the following components:
 
 ### Connecting the components
 
-![Photo of schematics](Schematics/tag_reader_schematics_v4-nobuzzer.png)
-
-<img src="Schematics/tag_reader_schematics_v4-nobuzzer.png" width="500"/>
+<img src="Schematics/tag_reader_schematics_v4-nobuzzer.png" heighth="300"/>
 
 Switches on PN532 need to be set to I2C mode:
 - Switch 1: On (up)
@@ -47,4 +45,6 @@ To flash the reader firmware to your D1 Mini you point ESPHome at [tagreader.yam
 made some changes to the original case design. Mainly did that to house the second LED and have some more space at the front for labels and logos.
 ![Open Case](docs/inside_case.jpg)
 
-Step File from Fusion are [here](CAD Files)
+<img src="docs/inside_case.jpg" width="500"/>
+
+Step File from Fusion are [here](/CAD%20Files/)
