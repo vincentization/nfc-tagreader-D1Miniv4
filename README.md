@@ -1,14 +1,16 @@
 # Tag Reader for Home Assistant
-This is based on the nfc tag [Tagreader](https://github.com/adonno/tagreader)project by adonno.
+This is based on the fantastic [tagreader](https://github.com/adonno/tagreader) project by adonno.
 
 More Documentation can be found there as well.
 
-<img src="reader.jpg" width="500"/>
+---
 
-My version focuses on the usage of this device as a alarm controller for a storefront. It sits behind a large window and does only the following:
-- Arm/Disarm alarm in Homeassistant (Using Alarmo) using NFC keychain tags
+My version focuses on the usage of this device as an alarm controller for Homeassistant using the [Alarmo](https://github.com/nielsfaber/alarmo) plugin. My tagreader basically only does this:
+- arm/disarm alarm in Homeassistant (Alarmo) using NFC keychain tags
 - show the current alarm state using the LED
 - write NDEF data on new NFC tags
+
+<img src="reader.jpg" width="500"/>
 
 ## What I changed:
 YAML:
@@ -25,15 +27,19 @@ Case:
 - added transparent LED channels
 
 ## Components
-To build your own tag reader, you need the following components:
+I used the following components:
 
  - ESP8266 D1 Mini v4.0
  - PN532 NFC Reader v4 (v4 has extended reach, otherwise won't work behind thick windows)
  - 2x WS2812 SMD 5050 Leds
 
 ### Connecting the components
+> [!IMPORTANT]  
+> I used the v4 version of the ESP8266 D1 Mini which has a slightly different pinout than its predecessor.
 
-<img src="Schematics/tag_reader_schematics_v4-nobuzzer.png" heighth="300"/>
+My wiring can be seen here:
+
+<img src="Schematics/tag_reader_schematics_v4-nobuzzer.png" height="600"/>
 
 Switches on PN532 need to be set to I2C mode:
 - Switch 1: On (up)
@@ -42,8 +48,7 @@ Switches on PN532 need to be set to I2C mode:
 To flash the reader firmware to your D1 Mini you point ESPHome at [tagreader.yaml](tagreader.yaml).  
 
 ## Case
-made some changes to the original case design. Mainly did that to house the second LED and have some more space at the front for labels and logos.
-![Open Case](docs/inside_case.jpg)
+made some changes to the original case design. Mainly did that to house the second LED and have some more space at the front of the case for labels and logos.
 
 <img src="docs/inside_case.jpg" width="500"/>
 
